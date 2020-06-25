@@ -343,6 +343,20 @@ Searching in Sub Documents:  Find all planets with the "discovered by" person's 
 
 db.planets.find({"discoveredBy.lastName": "Unknown"}).pretty();
 
+
+```
+
+###Sorting
+Sorting is acheived by adding a .sort() function to the end of a find command, and passing in the fields you want to sort on.
+Find all planets and sort them by planetName in ascending order:
+```
+db.planets.find().sort({planetName: 1})
+
+```
+Now in descending order:
+```
+db.planets.find().sort({planetName: -1})
+
 ```
 
 Contents copyright 2020 by Bruce M. Van Horn II
