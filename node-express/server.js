@@ -54,17 +54,13 @@ app.get("/api/v1/find/:id", (req, res) => {
   );
 });
 
-app.post("/api/v1/update/:id", (req, res) => {
+app.put("/api/v1/update/:id", (req, res) => {
   db.planets.update(
     {
       _id: mongojs.ObjectId(req.params.id)
     },
     {
-      $set: {
-        title: req.body.title,
-        note: req.body.note,
-        modified: Date.now()
-      }
+      $set: req.body
     },
     (error, data) => {
       if (error) {
@@ -77,7 +73,7 @@ app.post("/api/v1/update/:id", (req, res) => {
 });
 
 app.delete("/api/v1/delete/:id", (req, res) => {
-  db.notes.remove(
+  db.planets.remove(
     {
       _id: mongojs.ObjectID(req.params.id)
     },
