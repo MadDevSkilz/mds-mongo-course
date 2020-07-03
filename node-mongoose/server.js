@@ -19,5 +19,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/planetsdb", {
 app.use(routes);
 
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+  console.log(`Planetary API (with Mongoose) running on port ${PORT}!`);
 });

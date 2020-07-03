@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
 
 const planetSchema = new Schema({
@@ -12,18 +14,18 @@ const planetSchema = new Schema({
 
     },
     mass: {
-        type: Float
+        type: Number
     },
     radius: {
-        type: Float
+        type: Number
     },
     distanceFromEarth: {
-        type: Float
+        type: Number
     },
     nearbyStars: [String],
     discoveredBy: {}
 });
 
-const Planet = mongoose.model("Planet");
+const Planet = mongoose.model("Planet", planetSchema);
 
 module.exports = Planet;

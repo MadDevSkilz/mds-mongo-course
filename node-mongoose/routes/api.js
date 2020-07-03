@@ -1,9 +1,10 @@
 const router = require("express").Router();
+const mongoose = require("mongoose");
 const Planet = require("../models/planet.js");
 
 router.get("/api/v1/all", (req, res) => {
   Planet.find()
-    .sort()
+    .sort({planetName: 1})
     .then( dbPlanet => {
       res.json( dbPlanet );
     })
@@ -13,7 +14,7 @@ router.get("/api/v1/all", (req, res) => {
 });
 
 router.get("/api/v1/find/:id", (req, res) => {
-  Planet.find({ _id: mongoose.Types.ObjectId(req.params.id)})
+  Planet.findOne({ _id: mongoose.Types.ObjectId(req.params.id)})
   .sort({planetName: 1})
   .then( dbPlanet => {
     res.json( dbPlanet );
