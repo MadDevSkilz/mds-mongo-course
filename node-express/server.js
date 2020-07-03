@@ -28,16 +28,6 @@ app.get("/api/v1/all", (req, res) => {
   });
 });
 
-app.post("/api/v1/create", (req, res) => {
-  db.planets.insert(req.body, (error, data) => {
-    if (error) {
-      res.send(error);
-    } else {
-      res.send(data);
-    }
-  });
-});
-
 
 app.get("/api/v1/find/:id", (req, res) => {
   db.planets.findOne(
@@ -53,6 +43,19 @@ app.get("/api/v1/find/:id", (req, res) => {
     }
   );
 });
+
+
+app.post("/api/v1/create", (req, res) => {
+  db.planets.insert(req.body, (error, data) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+
 
 app.put("/api/v1/update/:id", (req, res) => {
   db.planets.update(
@@ -71,6 +74,7 @@ app.put("/api/v1/update/:id", (req, res) => {
     }
   );
 });
+
 
 app.delete("/api/v1/delete/:id", (req, res) => {
   db.planets.remove(
