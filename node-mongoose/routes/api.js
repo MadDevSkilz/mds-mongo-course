@@ -49,6 +49,9 @@ router.delete("/api/v1/delete/:id", (req, res) => {
   Planet.deleteOne({ _id: mongoose.Types.ObjectId(req.params.id)})
   .then( dbPlanet => {
     res.json(dbPlanet)
+  })
+  .catch(err => {
+    res.status(400).json(err);
   });
 });
 
