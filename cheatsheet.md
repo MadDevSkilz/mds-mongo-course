@@ -1,6 +1,7 @@
-#A Short Course on Mongo DB
+# MongoDB for Web Developers
 ## Presented by Bruce Van Horn II 
 -----------------------------------
+This course can be found at https://www.maddevskilz.com/courses/mongo-db-for-web-developers
 For more great courses, and free coding videos, check us out at https://maddevskilz.com.  
 
 Follow us on Twitter @DevSkilz.
