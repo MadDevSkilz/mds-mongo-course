@@ -4,7 +4,7 @@
   "description": "The NodeJS version of the API built in the course",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mongodb": "^3.5.9",
     "mongojs": "^3.1.0"
   },
